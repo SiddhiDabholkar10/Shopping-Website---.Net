@@ -1,0 +1,119 @@
+<div class="d-flex" style="min-width: 50%">
+
+<form class="input-group" role="search" style="margin: 1rem; width: 95%"
+>
+  <input
+    class="form-control"
+    type="search"
+    placeholder="Search by product name or description"
+    aria-label="Search" name="searchtext" id="searchtext" [(ngModel)]="searchtext" (keyup)="search()"
+  />
+  <button
+    routerLink="/search-results"
+    class="btn search-btn"
+    type="submit"
+  >
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+</form>
+</div>
+  <div class="sort-and-filter-container">
+    <ul class="list-group list-group-horizontal">
+      <li class="list-group-item">
+        Sort By
+        <div class="input-group mb-3">
+
+  <label class="input-group-text" for="inputGroupSelect01">Name</label>
+  <mat-select class="form-select" id="inputGroupSelect01" name="inputGroupSelect01" [(ngModel)]="value" (selectionChange)="Sort(value)">
+    <mat-option selected>Choose...</mat-option>
+    
+    <mat-option value="Ascending">Ascending</mat-option>
+    <mat-option value="Descending">Descending</mat-option>
+  </mat-select>
+    <label class="input-group-text" for="inputGroupSelect01">Price</label>
+
+    <mat-select class="form-select" id="inputGroupSelect01" name="inputGroupSelect01" [(ngModel)]="value" (selectionChange)="Sort(value)">
+
+    
+    <mat-option value="low">Low to High</mat-option>
+    <mat-option value="high">High to Low</mat-option>
+  </mat-select>
+  </div>
+</li>
+
+
+<li class="list-group-item">
+  Category
+  <div class="input-group mb-3">
+  <label class="input-group-text" for="inputGroupSelect01">Choose </label>
+  <mat-select class="form-select" id="inputGroupSelect01" placeholder="Category"  name="category" [(ngModel)]="cat.CategoryName" (selectionChange)="Filtercategory(cat.CategoryName)">
+    <mat-option *ngFor="let cat of category" [value]="cat.CategoryId">
+      {{cat.CategoryName}}
+    </mat-option>
+  </mat-select>
+  </div>
+  </li>
+
+ <li class="list-group-item">
+      Filter By
+
+      <div class="input-group mb-3">
+  <label class="input-group-text" for="inputGroupSelect01">Brand</label>
+  <mat-select class="form-select" id="inputGroupSelect01" name="inputGroupSelect01" [(ngModel)]="brand" (selectionChange)="FilterBrand(brand)">
+    <mat-option value="oppo" *ngFor="let b of brandlist" [value]="b">
+      {{b}}
+    </mat-option>
+  </mat-select>
+
+  <label class="input-group-text" for="inputGroupSelect01">Price</label>
+  <mat-select class="form-select" id="inputGroupSelect01" name="inputGroupSelect01" [(ngModel)]="value" (selectionChange)="Sort(value)">
+    <mat-option value="l1">Under 1000 Rs</mat-option>
+    <mat-option value="l2">Under 5000 Rs</mat-option>
+    <mat-option value="l3">Under 10,000 Rs</mat-option>
+    <mat-option value="l4">Under 50,000 Rs</mat-option>
+  </mat-select>
+  </div>
+  </li>
+  </ul>
+  </div>
+  
+    
+ 
+
+<div class="row row-cols-1 row-cols-md-3 g-4" style="margin: 0 0 1.5rem 0; padding: 0 1rem; width: 100%" *ngIf="products.length!=0;else elsetemplate">
+  <div class="col" *ngFor="let prod of products | filter:searchtext">
+    <div [routerLink]="['/product-desc',prod.ProductId]" class="card h-100" >
+      <img src="https://source.unsplash.com/random/350x150/?Laptop" class="card-img-top" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title">{{prod.ProductName}}</h5>
+        <h5>{{prod.ProdDesc | slice:0:50}}...</h5>
+        <p class="card-text">
+          {{prod.Brand}} </p>
+          <p class="card-text">
+          {{prod.Price | currency:'INR':true}} 
+        </p>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #elsetemplate>
+<div class="row row-cols-1 row-cols-md-3 g-4" style="margin: 0 0 1.5rem 0; padding: 0 1rem; width: 100%" >
+  <div class="col" *ngFor="let prod of productlist | filter:searchtext">
+    <div [routerLink]="['/product-desc',prod.ProductId]" class="card h-100" >
+      <img src="https://source.unsplash.com/random/350x150/?Laptop" class="card-img-top" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title">{{prod.ProductName}}</h5>
+        <h5>{{prod.ProdDesc | slice:0:50}}...</h5>
+
+        <p class="card-text">
+          {{prod.Brand}} </p>
+          <p class="card-text">
+          {{prod.Price | currency:'INR':true}} 
+        </p>
+        
+      </div>
+    </div>
+  </div>
+</div>
+</ng-template>

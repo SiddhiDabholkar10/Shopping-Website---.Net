@@ -1,0 +1,18 @@
+.sidebar {
+  text-align: center;
+  padding-top: 1rem;
+}
+
+.sidebar button {
+  padding: 1.5rem 0;
+  width: 15rem;
+  margin: 1rem;
+  font-weight: bold
+}
+
+.content {
+  margin: 2rem;
+  padding: 2rem;
+  border: 3px solid #2c2e8c;
+  border-radius: 10px;
+}

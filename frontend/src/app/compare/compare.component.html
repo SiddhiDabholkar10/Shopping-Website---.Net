@@ -1,0 +1,33 @@
+<div class="con">
+  <!-- <div class="cart-item-first">
+    <h4 style="padding-top: 4px">
+      <i class="fa fa-shopping-cart" style="margin-right: 5px"></i>Your Cart
+    </h4>
+  </div> -->
+  <div class="cart-item" *ngFor="let c of comparedata">
+    
+    <img class="sub1" src="https://source.unsplash.com/random/800x800/?mobiles" style="width:100% ;height:100%px ;" alt="">
+   
+    <div class="sub2" >
+      <h6>
+        {{c.ProductName}}
+      </h6>
+      <h6>{{c.Brand}}</h6>
+      <p style="font-size: 0.8rem;">
+        {{c.ProdDesc}}
+      </p>
+      <b><span>Price: <span>{{c.Price | currency:'INR':true}}</span></span></b> &nbsp; &nbsp; &nbsp;
+      <hr>
+      <button class="btn btn-sm" style="margin-right: 10px" (click)="addtocart(c)">
+        <i class="fa fa-shopping-cart" style="margin-right: 3px"></i>Add to Cart
+      </button>
+      <button class="btn btn-sm" style="margin-right: 10px;float: right;" (click)="remove(c)">
+        <i class="fa fa-trash" style="margin-right: 3px"></i>Remove
+      </button>  
+     
+    </div>
+  </div>
+
+  
+
+</div>

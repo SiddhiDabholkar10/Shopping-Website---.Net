@@ -1,0 +1,20 @@
+.card {
+    box-shadow: -5px 5px 10px grey;
+    cursor: pointer;
+  }
+  .heading{
+    height:15%;
+    position: relative;
+    width: 100%;
+    background-color: #fff3cd; 
+    align-items: center;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 0.5rem;
+    padding-top: 0.2rem;
+  }
+  .heading h4{
+    padding-bottom: 0.5rem;
+  }

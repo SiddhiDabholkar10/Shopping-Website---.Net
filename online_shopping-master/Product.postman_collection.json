@@ -1,0 +1,82 @@
+{
+	"info": {
+		"_postman_id": "d51e48db-d3c9-4b39-a2dc-28c8a89ad966",
+		"name": "Product",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetProducts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:53101/api/Product/ListProducts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "53101",
+					"path": [
+						"api",
+						"Product",
+						"ListProducts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetProducts/id",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "GetCategory",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:53101/api/Product/GetCategory/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "53101",
+					"path": [
+						"api",
+						"Product",
+						"GetCategory",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetBrand",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:53101/api/Product/GetBrand/oppo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "53101",
+					"path": [
+						"api",
+						"Product",
+						"GetBrand",
+						"oppo"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

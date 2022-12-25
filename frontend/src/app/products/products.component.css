@@ -1,0 +1,30 @@
+.card {
+  box-shadow: -5px 5px 10px grey;
+  cursor: pointer;
+}
+.sort-and-filter-container {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.sort-and-filter-container ul {
+  border: 3px solid #2c2e8c;
+  width: 96%;
+  margin: 1rem;
+  text-align: center;
+  font-weight: bold;
+  
+}
+.search-btn {
+  background-color: #ffca2c;
+}
+
+.btn {
+  margin-left: 0.75rem;
+  min-width: fit-content;
+}
+ul li{
+  width:34%
+  }
+

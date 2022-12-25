@@ -1,0 +1,17 @@
+nav {
+  background-color: #2c2e8c;
+  font-size: 1.3rem;
+}
+
+.fa-cart-shopping {
+  color: #ffca2c;
+}
+
+.search-btn {
+  background-color: #ffca2c;
+}
+
+.btn {
+  margin-left: 0.75rem;
+  min-width: fit-content;
+}

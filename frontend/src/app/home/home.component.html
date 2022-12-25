@@ -1,0 +1,68 @@
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+      aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="5000">
+      <img src="https://source.unsplash.com/random/700x175/?gadgets" class="d-block w-100" alt="gadgets" />
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Latest in Tech</h5>
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="5000">
+      <img src="https://source.unsplash.com/random/700x175/?home furniture" class="d-block w-100" alt="furniture" />
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Home Essentials</h5>
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="5000">
+      <img src="https://source.unsplash.com/random/700x175/?fashion" class="d-block w-100" alt="clothing" />
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Stay in Style</h5>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<h2 style="
+    margin: 1.5rem 1.5rem 0 1.5rem;
+    padding: 0.5rem;
+    text-align: center;
+    background-color: #ffca2c;
+    border-radius: 10px;
+  ">
+  Latest Products
+</h2>
+
+<div class="row row-cols-1 row-cols-md-3 g-4" style="margin: 0; padding: 0 1rem; width: 100%">
+  <div class="col"  *ngFor="let prod of productlist">
+    <div class="card h-100" >
+      <img src="https://source.unsplash.com/random/350x150/?gadgets?sig=1" class="card-img-top" alt="..." />
+      <div class="card-body" >
+        <h5 class="card-title">{{prod.ProductName}}</h5>
+        <p class="card-text">
+          {{prod.ProdDesc | slice:0:50}}...
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<div style="margin: 1.5rem; text-align: center">
+  <button routerLink="/products" class="btn btn-warning" style="font-weight: bold">
+    See More Products!
+  </button>
+</div>

@@ -1,0 +1,219 @@
+{
+	"info": {
+		"_postman_id": "b4090e06-c82c-4e8f-b736-2bbfd26bc9ea",
+		"name": "Online_shopping",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "19306267"
+	},
+	"item": [
+		{
+			"name": "GetUserList",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "AddUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Fname\":\"Himanshu\",\r\n    \"Lname\":\"Marathe\",\r\n    \"Email\":\"himanshu@gmail.com\",\r\n    \"Mob\":\"9029090177\",\r\n    \"UserAddress\":\"B/306, Sarvodaya Bali, Dombivli West\",\r\n    \"UserPwd\":\"12346\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:53101/api/user/adduser"
+			},
+			"response": []
+		},
+		{
+			"name": "GetUserId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:53101/api/user/getusers/2"
+			},
+			"response": []
+		},
+		{
+			"name": "GetRetailers",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"RetName\":\"Dinesh electronics\",\r\n    \"RetEmail\":\"dinesh@gmail.com\",\r\n    \"RetMob\":\"1234567890\",\r\n    \"RetLoc\":\"Pali\",\r\n    \"RetPwd\":\"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:53101/api/retailer/getretailers"
+			},
+			"response": []
+		},
+		{
+			"name": "AddRetailer",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "GetProducts",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "AddProduct",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "EditPoroduct",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n    \"ProductName\": \"OnePlus 6\",\r\n        \"Brand\": \"OnePlus\",\r\n        \"ProdDesc\": \"8GB RAM | 128GB STORAGE | SD845 | 12Mp Camera\",\r\n        \"Price\": \"45000\",\r\n        \"CategoryId\": 1,\r\n        \"CountAvailable\": 15\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:53101/api/retailer/editproduct/11"
+			},
+			"response": []
+		},
+		{
+			"name": "EditProductRating",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"SumRatings\":5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:53101/api/retailer/editproductrating/11"
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllCarts",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "GetCartdId",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "AddCart",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ProductId\": 10,\r\n        \"Quantity\": 1,\r\n        \"UserId\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:53101/api/cart/getallcarts"
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteCart",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "EditCart",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n    \"CartId\": 2,\r\n        \"ProductId\": 9,\r\n        \"Quantity\": 2,\r\n        \"UserId\": 3\r\n    }\r\n    ,\r\n    {\r\n         \"CartId\": 5,\r\n        \"ProductId\": 10,\r\n        \"Quantity\": 6,\r\n        \"UserId\": 3\r\n    }\r\n\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:53101/api/cart/editcart/4"
+			},
+			"response": []
+		},
+		{
+			"name": "GetWishlist",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllWishlists",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "AddWishlist",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "EditWishList",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

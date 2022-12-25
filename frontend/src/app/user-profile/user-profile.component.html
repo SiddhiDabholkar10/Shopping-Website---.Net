@@ -1,0 +1,19 @@
+<div class="row" style="width: 100%; margin: 0;">
+  <div class="sidebar col-lg-3">
+    <button class="btn btn-primary" (click)="details()">My Details</button>
+    <button [routerLink]="['/user/wishlist/',data.UserId]" class="btn btn-info">Wishlist</button>
+    <button [routerLink]="['/user/my-orders/',data.UserId]" class="btn btn-success">My Orders</button>
+    <button routerLink="/newpassUser" class="btn btn-warning">Change Password</button>
+    <!-- <button class="btn btn-danger">Delete Account</button> -->
+  </div>
+  <div class="col-lg-9">
+    <div class="content">
+      <h3 style="text-align: center;">My Details</h3>
+     <p>FullName: {{userdatalist.Fname}} {{userdatalist.Lname}}</p>
+     <p>Address: {{userdatalist.UserAddress}}</p>
+     <p>Email: {{userdatalist.Email}}</p>
+     <p>Mob no: {{userdatalist.Mob}}</p>
+
+    </div>
+  </div>
+</div>

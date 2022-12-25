@@ -1,0 +1,5 @@
+import httpclientmodule
+then include in it imports file in app.module.ts
+
+in routing, while editing, finding, deleting give id like edit/:id
+

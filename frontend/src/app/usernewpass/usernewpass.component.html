@@ -1,0 +1,35 @@
+<div fxLayoutAlign="center center" [ngStyle]="{height:'100%', backgroundImage: 'radial-gradient(#ddd6f3,#faaca8)'}" fxFlexFill class="userlogindiv">
+    <mat-card  fxFlex="70" style="margin: 1rem;">
+        <mat-toolbar fxLayoutAlign="center center" >Generate New Password</mat-toolbar>
+        <form fxLayoutAlign="stretch" fxLayout="column" class="userloginform" (ngSubmit)="validate(user,otp,cnfPwd)"  #updateForm="ngForm">
+            
+            <mat-form-field for="email"  style="padding-top:20px ; padding-bottom: 20px;" >
+                <mat-label >Enter Your Email</mat-label>
+                <input matInput type="email" name="email" id="email" placeholder="Enter your Email" required [(ngModel)]="user.Email"  #email="ngModel">
+              </mat-form-field>
+              <button mat-raised-button type="button" class="mybutton" style="background-color: rgb(92, 95, 223);width: 20%; align-self: center;" (click)="getOtp()">GetOtp</button><br/>
+      
+              <mat-form-field for="otpp"  style="padding-top:20px ; padding-bottom: 20px;" >
+                <mat-label >Enter Your Otp</mat-label>
+                <input matInput type="text" name="otpp" id="otpp" placeholder="Enter your 6 digit otp" required [(ngModel)]="otp"  >
+              </mat-form-field>
+      
+      
+
+              <mat-form-field   style="padding-top:20px ; padding-bottom: 20px;" >
+                <mat-label for="password" >New Password</mat-label>
+                <input matInput type="password" name="password" id="password" placeholder="Enter New Password" required [(ngModel)]="user.UserPwd"  #password="ngModel">
+              </mat-form-field>
+  
+              <mat-form-field  style="padding-top:20px ; padding-bottom: 10px;" >
+                  <mat-label for="cnfPwd">Confirm Password</mat-label>
+                  <input matInput type="password" name="cnfPwd" id="cnfPwd" placeholder="Confirm Password" required [(ngModel)]="cnfPwd">
+                </mat-form-field>
+                <button mat-raised-button class="mybutton" style="background-color: rgb(92, 95, 223);width: 60%; align-self: center;" type="submit" [disabled]="!updateForm.valid">Change Password</button><br/>
+                
+            </form>
+            
+    </mat-card>
+    
+</div>
+

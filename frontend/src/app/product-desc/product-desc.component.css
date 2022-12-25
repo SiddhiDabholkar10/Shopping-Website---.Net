@@ -1,0 +1,145 @@
+html, body {
+    margin:0px;
+    height:100%;
+    width: 100%;
+    background-color: #fff3cd;
+  }
+.con{
+    height: 600px;
+    position:relative;
+    top:0px;
+    right:0px;
+    bottom:0px;
+    left:0px;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    align-items: center;
+    
+    
+        
+}
+.con-1{
+    width: 40%;
+    height: 90%;
+    margin: 10px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+     background: url("https://source.unsplash.com/random/200x200/?mobiles"); 
+    background-size: cover;
+    border-radius: 5px;
+    
+}
+.con-2{
+   width: 60%;
+    height: 90%;
+    margin: 10px;
+    border-radius:5px ;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    padding: 20px;  
+    text-align:justify;
+    
+}
+.btns{
+    background-color: #2c2e8c;
+    border: 2px solid #2c2e8c;
+    border-radius:12px ;
+    color: #fff3cd;
+    margin: 5px;
+    margin-top: 10px;
+}
+select{
+    display: inline;
+    height: 2rem;
+    width: 5rem;
+    
+}
+option{
+    height: 1rem;
+}
+label{
+    display : inline;
+    padding-right : 4px;
+}
+.btn{
+    border-radius: 5px;
+    background-color: #2c2e8c;
+    border: 2px solid #2c2e8c;
+    color: #fff3cd;
+    border-radius: 15px;
+
+}
+.btn:hover{
+    background-color: bisque;
+    color: #2c2e8c;
+}
+label{
+    font-size: 20px;
+}
+
+/* media queries */
+@media (max-width: 700px) {
+    .con {
+      flex-direction: column;
+      height: 200vh;
+      width: 100%;
+      
+    }
+    .con-1{
+        width: 90%;
+        height: 550px;
+    }
+    .con-2{
+        width: 90%;
+        height: 650px;
+    }
+    
+}
+@media (max-width:400px)
+{
+    .con{
+        height: 150vh;
+    }
+    .con-1{
+        width: 90%;
+        height: 400px;
+    }
+    .con-2{
+        width: 90%;
+        height: 610px;
+    }
+    h3{
+        font-size: 20px;
+    }
+    h5{
+        font-size: 15px;
+    }
+    p{
+        font-size: 12px;
+        font-weight: 500;
+    }
+    span{
+        font-size: 12px;
+        font-weight: 600;
+    }
+    label{
+        display : inline;
+        padding-right : 4px;
+        font-size: 15px;
+        font-weight: 600;
+    }
+    .btn{
+        border-radius: 5px;
+        background-color: #2c2e8c;
+        border: 2px solid #2c2e8c;
+        
+        color: #fff3cd;
+        border-radius: 15px;
+    
+    }
+    .btn:hover{
+        background-color: bisque;
+        color: #2c2e8c;
+    }
+    
+    
+}

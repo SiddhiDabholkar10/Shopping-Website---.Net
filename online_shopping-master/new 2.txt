@@ -1,0 +1,28 @@
+
+1.when retailer registers on portal
+
+is_accepted   is_rejected
+false			false
+
+
+so admin can only see retailers whose is_accepted and is_rejected is false
+
+
+
+2. if admin approves the retailer request
+
+is_accepted 	is_rejected
+true			false
+
+
+after this, retailer can add the products 
+and admin wont see a pending request by this retailer
+
+
+3. if admin rejected the retailers request
+
+is_accepted 	is_rejected
+false				true
+
+after this, admin wont see the pending request also retailer cant add the products
+

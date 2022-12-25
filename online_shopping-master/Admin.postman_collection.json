@@ -1,0 +1,120 @@
+{
+	"info": {
+		"_postman_id": "8a59f513-6267-438d-a780-9f69b36f7555",
+		"name": "Admin",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "EditRetailer",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\"RetailersId\": 1,\"RetailersName\": \"darshan\",\"RetailersStatus\": true}\r\n     ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:53101/api/Admin/EditRetailer/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "53101",
+					"path": [
+						"api",
+						"Admin",
+						"EditRetailer",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ListRetailers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:53101/api/Admin/ListRetailers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "53101",
+					"path": [
+						"api",
+						"Admin",
+						"ListRetailers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddRetailer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\"ret_name\":\"Aditya\",\"ret_email\":\"afgdfdhf\",\"ret_mob\":\"9867477654\",\"ret_loc\":\"dombivali\",\"ret_pwd\":\"qwertyui\",\"is_accepted\":false}\r\n      \r\n      ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:53101/api/Admin/AddRetailer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "53101",
+					"path": [
+						"api",
+						"Admin",
+						"AddRetailer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteRetailer",
+			"request": {
+				"method": "DELETE",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "ListProducts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:53101/api/Admin/ListProducts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "53101",
+					"path": [
+						"api",
+						"Admin",
+						"ListProducts"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

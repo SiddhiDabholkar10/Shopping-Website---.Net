@@ -1,0 +1,62 @@
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="">
+      <i class="fa-solid fa-cart-shopping"></i>
+      LTIkart
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" routerLink="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/products">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/compare">Compare</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/cart/',data.UserId]">Cart</a>
+        </li>
+      </ul>
+      <div class="d-flex" style="min-width: 50%;justify-content: flex-end;
+      ">
+        <!-- <form class="input-group" role="search">
+          <input
+            class="form-control"
+            type="search"
+            placeholder="Seacrh by product name or description"
+            aria-label="Search"
+          />
+          <button
+            routerLink="/search-results"
+            class="btn search-btn"
+            type="submit"
+          >
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form> -->
+        <button routerLink="login" class="btn btn-danger" *ngIf="!(isuserlogged() || isretailerlogged() || isadminlogged())">
+          Sign In / Sign Up
+        </button>
+        <button routerLink="retailer" class="btn btn-primary" *ngIf="isretailerlogged()">{{retdata.RetName}}</button>
+
+        <button routerLink="user" class="btn btn-primary"  *ngIf="isuserlogged()">{{userdata.Fname}}</button>
+         <!-- <button routerLink="admin" class="btn btn-primary" [style.visibility]="(isuserlogged() || isretailerlogged())?'hidden':'visible'">Admin</button> --> 
+        <button class="btn btn-danger" (click)="logout()" *ngIf="isuserlogged() || isretailerlogged() || isadminlogged()"
+        >Log Out</button>
+      </div>
+    </div>
+  </div>
+</nav>

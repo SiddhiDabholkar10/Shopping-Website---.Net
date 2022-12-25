@@ -1,0 +1,48 @@
+<div class="con" style="margin: 1rem 0">
+  <div class="cart-item-first">
+    <h4 style="padding-top: 4px">
+      <i class="fa fa-shopping-cart" style="margin-right: 5px"></i>Your Cart
+    </h4>
+  </div>
+  <div class="cart-item"  *ngFor="let c of cartlist">
+    <img src="https://source.unsplash.com/random/300x150/?mobiles" alt="">
+    <div class="sub2">
+      <h5>
+        {{c.Product.ProductName}}
+      </h5>
+      <h6>{{c.Product.Brand}}</h6>
+      <p>
+       {{c.Product.ProdDesc}}
+      </p>
+      <span>Price: ₹<span>{{c.Product.Price}}</span></span
+      >&nbsp;&nbsp;
+
+      <button
+        type="button"
+        class="quantity_button"
+        style="border-top-left-radius: 5px; border-bottom-left-radius: 5px"
+        (click)="minus(c)"
+      >
+        <i class="fa fa-minus"></i>
+      </button>
+      <input class="quantity_input" type="text" [value]="c.Quantity"/>
+      <button
+        type="button"
+        class="quantity_button"
+        style="border-bottom-right-radius: 5px; border-top-right-radius: 5px"
+        (click)="plus(c)"
+      >
+        <i class="fa fa-plus"></i>
+      </button>
+
+      <button class="btn btn-sm" style="float: right; margin-right: 10px" (click)="deletecart(c.CartId)">
+        Delete
+      </button>
+    </div>
+  </div>
+  
+  <div class="end">
+    <h5>Total: ₹ <span>{{getSum()}}</span></h5>
+    <button class="btn pay" (click)="addorder(cartlist)">Place Order</button>
+  </div>
+</div>

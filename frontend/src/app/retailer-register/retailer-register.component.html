@@ -1,0 +1,54 @@
+<div fxLayoutAlign="center center" [ngStyle]="{height:'100vh'}" fxFlexFill class="userlogindiv">
+    <mat-card  fxFlex="70">
+        <mat-toolbar fxLayoutAlign="center center" >Retailer Registration</mat-toolbar>
+        <form fxLayoutAlign="center space-around" fxLayout="column" class="userloginform" (ngSubmit)="saveRetailer(retailerdata, cpwd)" #retailerregister="ngForm">
+            <mat-form-field class="myinput">
+                <mat-label for="RetName">Name</mat-label>
+                <input matInput type="text" name="RetName" id="RetName" required placeholder="Name" [(ngModel)]="retailerdata.RetName" #RetName="ngModel" >
+            </mat-form-field>
+            <div   fxLayout="row" style="align-self: center;" fxLayoutAlign="space-evenly center" fxFlexFill>
+
+                <mat-form-field  style="width:30em; padding-top:10px ; padding-bottom: 10px;" >
+                    <mat-label for="RetEmail" >Email ID</mat-label>
+                    <input matInput type="email" id="RetEmail" name="RetEmail" placeholder="Email" required [(ngModel)]="retailerdata.RetEmail" #RetEmail="ngModel" >
+                </mat-form-field>
+                <mat-form-field   style="width:30em ;padding-top:10px ; padding-bottom: 10px;" >
+                    <mat-label  for="RetMob" >Mobile No</mat-label>
+                    <input matInput type="text" id="RetMob" name="RetMob" placeholder="Mobile" required [(ngModel)]="retailerdata.RetMob"  #RetMob="ngModel">
+                </mat-form-field>
+            </div>
+            <div   fxLayout="row" fxLayoutAlign="space-evenly center" fxFlexFill>
+
+
+
+                <mat-form-field   style="width:30em ;padding-top:20px ; padding-bottom: 20px;" >
+                    <mat-label for="RetPwd">Password</mat-label>
+                    <input matInput type="password" id="RetPwd" name="RetPwd" placeholder="Password" required  [(ngModel)]="retailerdata.RetPwd" #RetPwd="ngModel" minlength="8">
+                    <div *ngIf="RetPwd.invalid && (RetPwd.dirty || RetPwd.touched)" style="color: red">
+                        <div *ngIf="RetPwd.errors?.['minlength']">
+                            Password must be atleast of 8 characters
+    
+                        </div>
+                        </div>
+                </mat-form-field>
+                <mat-form-field   style="width:30em ;padding-top:20px ; padding-bottom: 20px;" >
+                    <mat-label for="cpwd">Confirm Password</mat-label>
+                    <input matInput type="password" id="cpwd" name="cpwd" required placeholder="Confirm Password" [(ngModel)]="cpwd">
+                </mat-form-field>
+            </div>
+
+            <mat-form-field  class="myinput">
+                <mat-label for="RetLoc">Location</mat-label>
+                <textarea matInput name="RetLoc" id="RetLoc" placeholder="Enter your location" required [(ngModel)]="retailerdata.RetLoc" #RetLoc="ngModel"></textarea>
+            </mat-form-field>
+            
+            
+            <button mat-raised-button class="mybutton" style="background-color: rgb(92, 95, 223);width: 60%; align-self: center;" type="submit" [disabled]="!retailerregister.valid">Register</button><br/>
+                
+            </form>
+            
+    </mat-card>
+    
+</div>
+
+

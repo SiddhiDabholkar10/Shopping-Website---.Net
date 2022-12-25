@@ -1,0 +1,36 @@
+html,
+body {
+  margin: 0px;
+  height: 100%;
+  width: 100%;
+  background-color: #f0f1f3;
+}
+
+.con {
+  height: 100%;
+  position: relative;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+
+.btn {
+  color: black;
+}
+
+.btn:hover {
+  color: white;
+}
+
+.logout {
+  border-color: #fff3cd;
+  color: #fff3cd;
+  margin-right: 20px;
+}
+
+.logout:hover {
+  border-color: #fff3cd;
+  color: rgb(92, 95, 223);
+  background-color: #fff3cd;
+}

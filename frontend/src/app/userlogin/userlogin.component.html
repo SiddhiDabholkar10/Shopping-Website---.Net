@@ -1,0 +1,51 @@
+<div
+  fxLayoutAlign="center center"
+  [ngStyle]="{
+    height: '100vh',
+    backgroundImage: 'radial-gradient(#ddd6f3,#faaca8)'
+  }"
+  fxFlexFill
+  class="userlogindiv"
+>
+  <mat-card fxFlex="70">
+    <mat-toolbar fxLayoutAlign="center center">Sign In</mat-toolbar>
+    <form  (ngSubmit)="login(data)" #loginForm="ngForm" fxLayoutAlign="stretch" fxLayout="column" class="userloginform">
+      <mat-form-field appearance="fill">
+        <mat-label style="font-size: 15px">Choose an option</mat-label>
+        <select class="selectdrop" matNativeControl name="role" id="role" [(ngModel)]="data.role" required #role="ngModel" >
+          <option value="" selected>Select</option>
+          <option class="dropdown" value="Admin">Admin</option>
+          <option class="dropdown" value="User">User</option>
+          <option class="dropdown" value="Retailer">Retailer</option>
+        </select>
+      </mat-form-field>
+
+      <mat-form-field style="padding-top: 20px; padding-bottom: 20px">
+        <mat-label for="username">Enter Your Email ID</mat-label>
+        <input matInput id="username" name="username" autocomplete="off"  [(ngModel)]="data.username" required #username="ngModel" placeholder="Registered Email Id" />
+      </mat-form-field>
+
+      <mat-form-field style="padding-top: 20px; padding-bottom: 10px">
+        <mat-label for="password">Enter Password:</mat-label>
+        <input matInput name="password" id="password"  [(ngModel)]="data.password" required #password="ngModel" type="password" placeholder="Password" />
+      </mat-form-field>
+      <button
+        mat-raised-button
+        class="mybutton"
+        style="
+          background-color: rgb(92, 95, 223);
+          width: 60%;
+          align-self: center;
+        "
+        type="submit"
+        [disabled]="!loginForm.valid"
+      >
+        Sign In</button
+      ><br />
+      <div class="con">
+        <a [routerLink]="['/newpass'+data.role]" (click)="check(data.role)">Forgot Password?</a>
+        <a [routerLink]="['/signup'+data.role]" (click)="check(data.role)">New Account?Sign Up</a>
+      </div>
+    </form>
+  </mat-card>
+</div>

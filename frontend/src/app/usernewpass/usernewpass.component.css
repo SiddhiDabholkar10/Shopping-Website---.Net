@@ -1,0 +1,40 @@
+html, body {
+    box-sizing: border-box;
+    height: 100vh;
+    margin: 0;
+    
+  }
+/* .firstdiv{
+    height: 100vh;
+    background-image: radial-gradient(#ffafbd , #ffc3a0) ;
+} */
+.userlogindiv{
+    border-radius: 5px;
+}
+.userlogindiv mat-card{
+    padding: 0px;
+    border-radius: 10px;
+    
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    
+    
+   
+}
+.userlogindiv mat-card mat-toolbar{
+    background-color:rgb(12, 12, 130) ;
+    color: azure;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+
+}
+.userloginform{
+    padding: 20px;
+    background-color: rgb(225, 225, 225);
+    border-radius: 10px;
+   
+}
+.mybutton{
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}

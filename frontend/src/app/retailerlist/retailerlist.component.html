@@ -1,0 +1,58 @@
+<head>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:ital@1&family=Roboto&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <div class="con" style="margin-top: 3.5rem;">
+    <nav
+      class="navbar"
+      style="background-color: rgb(92, 95, 223); height: 70px"
+    >
+      <div class="container-fluid">
+        <span style="color: #fce477; font-size: 35px; text-align: center"
+          >Admin DashBoard</span
+        >
+        <div class="buttons">
+          <button routerLink="retailer-requests" type="button" style="left: 20px" class="btn btn-sm logout">
+            Requests</button
+          >&nbsp;&nbsp;
+        </div>
+      </div>
+    </nav>
+
+    <div class="tableclass">
+      <h3>Current Retailers</h3>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col" class="text-center">Id</th>
+            <th scope="col" class="text-center">Name</th>
+            <th scope="col" class="text-center">Location</th>
+            <th scope="col" class="text-center">Mobile No</th>
+            <th scope="col" class="text-center">Email ID</th>
+            <th scope="col" class="text-center">Action</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let ret of retailerlist; let i=index">
+            <th scope="row">{{i+1}}</th>
+            <td>{{ret.RetName}}</td>
+            <td>{{ret.RetLoc}}</td>
+            <td>{{ret.RetMob}}</td>
+            <td>{{ret.RetEmail}}</td>
+            <td class="text-center"><button type="button" class=" btn btn-outline-danger btn-sm" (click)="deleteRetailer(ret)" >Delete</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>

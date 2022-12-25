@@ -1,0 +1,35 @@
+
+<div class="con">
+    <div class="cart-item-first">
+      <h4 style="padding-top: 4px">
+      
+        <i class="fa-solid fa-bag-shopping" aria-hidden="true" style="margin-right: 5px"></i>Your Wish List
+      </h4>
+    </div>
+    <div class="cart-item" *ngFor="let w of wishlistdata">
+      
+        <img src="https://source.unsplash.com/random/300x150/?mobiles"  alt="">
+      
+      <div class="sub2">
+        <h5>
+          {{w.Product.ProductName}}
+        </h5>
+        <h6>{{w.Product.Brand}}</h6>
+        <p>
+         {{w.Product.ProdDesc}}
+        </p>
+        <span>Price: ₹<span>{{w.Product.Price}}</span></span
+        >&nbsp;&nbsp;
+        <button class="btn btn-sm" style="float: right; margin-right: 10px" (click)="addtocart(w)">
+            <i class="fa fa-shopping-cart" style="margin-right: 3px"></i>Add to Cart
+          </button>
+        <button class="btn btn-sm" style="float: right; margin-right: 10px" (click)="deletewish(w)">
+          Delete
+        </button>
+      </div>
+    </div>
+    
+    </div>
+    
+  
+  

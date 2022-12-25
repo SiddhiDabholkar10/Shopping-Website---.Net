@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+app-root {
+  background-color: #f0f1f3;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: 3.5rem;
+}
+
+app-footer {
+  margin-top: auto;
+}

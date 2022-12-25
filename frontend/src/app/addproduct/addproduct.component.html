@@ -1,0 +1,45 @@
+<div fxLayoutAlign="center center" [ngStyle]="{height:'100%'}" fxFlexFill class="userlogindiv">
+    <mat-card  fxFlex="70" style="margin: 1rem;">
+        <mat-toolbar fxLayoutAlign="center center" >Add Your Product</mat-toolbar>
+        <form fxLayoutAlign="center space-around" fxLayout="column" class="userloginform" (ngSubmit)="saveproduct(productdata,cat)" #productForm="ngForm">
+            
+            <mat-form-field style="width:88%; align-self:center;" appearance="fill">
+                <mat-label style="font-size: 15px;" >Choose a Product Category</mat-label>
+                    <mat-select placeholder="Category" (change)="changeClient($event)" name="category" [(ngModel)]="cat.CategoryName">
+                      <mat-option *ngFor="let cat of category" [value]="cat.CategoryName">
+                        {{cat.CategoryName}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field> 
+                  
+            
+            <mat-form-field class="myinput">
+                <mat-label for="name">Product Name</mat-label>
+                <input matInput type="text" placeholder="Product Name" required name="name" id="name" [(ngModel)]="productdata.ProductName" #name="ngModel">
+            </mat-form-field>
+            <mat-form-field class="myinput">
+                <mat-label for="bname">Brand Name</mat-label>
+                <input matInput type="text" placeholder="Brand Name" required name="bname" id="bname" [(ngModel)]="productdata.Brand" #bname="ngModel">
+            </mat-form-field>
+            <mat-form-field  class="myinput">
+                <mat-label for="desc">Product Description</mat-label>
+                <textarea matInput placeholder="Description" required name="desc" id="desc" [(ngModel)]="productdata.ProdDesc" #desc="ngModel"></textarea>
+            </mat-form-field>
+            <mat-form-field class="myinput">
+                <mat-label for="price">Price</mat-label>
+                <input matInput type="number" placeholder="Price" required name="price" id="price" [(ngModel)]="productdata.Price" #price="ngModel">
+            </mat-form-field>
+            <mat-form-field   style="width:47em ;left:3em;padding-top:10px ; padding-bottom: 10px;" >
+                <mat-label for="quantity">Quantity</mat-label>
+                <input matInput type="number" min="25" max="250" placeholder="Quantity" required name="quantity" id="quantity" [(ngModel)]="productdata.CountAvailable" #quantity="ngModel">
+            </mat-form-field>
+            <button mat-raised-button class="mybutton" style="background-color: rgb(92, 95, 223);width: 60%; align-self: center;" type="submit" [disabled]="!productForm.valid">Add Product</button><br/>
+                
+            </form>
+            
+    </mat-card>
+    
+</div>
+
+
+

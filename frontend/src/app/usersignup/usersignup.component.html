@@ -1,0 +1,59 @@
+<div fxLayoutAlign="center center" [ngStyle]="{height:'100%'}" fxFlexFill class="userlogindiv">
+    <mat-card  fxFlex="70" style="margin: 1rem;">
+        <mat-toolbar fxLayoutAlign="center center" >User Sign Up</mat-toolbar>
+        <form (ngSubmit)="saveUser(user, cpwd)" #usersign="ngForm"  fxLayoutAlign="center space-around" fxLayout="column" class="userloginform">
+            <mat-form-field class="myinput">
+                <mat-label for="fname">First Name</mat-label>
+                <input matInput type="text" name="fname" id="fname" placeholder="First Name" [(ngModel)]="user.Fname" required #fname="ngModel">
+            </mat-form-field>
+            <mat-form-field class="myinput">
+                <mat-label for="lname">Last Name</mat-label>
+                <input matInput type="text" name="lname" id="lname" placeholder="Last Name" [(ngModel)]="user.Lname"  required #lname="ngModel">
+            </mat-form-field>
+
+            <div   fxLayout="row" style="align-self: center;" fxLayoutAlign="space-evenly center" fxFlexFill>
+
+                <mat-form-field  style="width:30em; padding-top:10px ; padding-bottom: 10px;" >
+                    <mat-label for="email">Email ID</mat-label>
+                    <input matInput type="email" name="email" id="email" required [(ngModel)]="user.Email" #email="ngModel" placeholder="Email">
+                </mat-form-field>
+                <mat-form-field   style="width:30em ;padding-top:10px ; padding-bottom: 10px;" >
+                    <mat-label for="Mob">Mobile No</mat-label>
+                    <input matInput type="text" name="Mob" id="Mob" [(ngModel)]="user.Mob" required #Mob="ngModel" placeholder="Mobile">
+                </mat-form-field>
+            </div>
+            <div   fxLayout="row" fxLayoutAlign="space-evenly center" fxFlexFill>
+
+
+
+                <mat-form-field   style="width:30em ;padding-top:20px ; padding-bottom: 20px;" >
+                    <mat-label for="pwd">Password</mat-label>
+                    <input matInput type="password" name="pwd" id="pwd" [(ngModel)]="user.UserPwd" required #pwd="ngModel" placeholder="Password" minlength="8">
+                    <div *ngIf="pwd.invalid && (pwd.dirty || pwd.touched)" style="color: red">
+                        <div *ngIf="pwd.errors?.['minlength']">
+                            Password must be atleast of 8 characters
+    
+                        </div>
+                    </div>
+                </mat-form-field>
+                <mat-form-field   style="width:30em ;padding-top:20px ; padding-bottom: 20px;" >
+                    <mat-label for="cpwd">Confirm Password</mat-label>
+                    <input matInput type="password" name="cpwd" id="cpwd" [(ngModel)]="cpwd" required placeholder="Confirm Password">
+                </mat-form-field>
+            </div>
+
+            <mat-form-field  class="myinput">
+                <mat-label  for="UserAddress">Address</mat-label>
+                <textarea matInput name="UserAddress" id="UserAddress" [(ngModel)]="user.UserAddress" required #UserAddress="ngModel" namplaceholder="Enter your present address"></textarea>
+            </mat-form-field>
+
+
+
+            <button mat-raised-button [disabled]="!usersign.valid" class="mybutton" style="background-color: rgb(92, 95, 223);width: 60%; align-self: center;" type="submit">Sign Up</button><br/>
+
+            </form>
+
+    </mat-card>
+
+</div>
+

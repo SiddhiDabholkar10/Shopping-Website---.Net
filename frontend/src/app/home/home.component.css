@@ -1,0 +1,8 @@
+.carousel-caption {
+  background-color: rgba(19, 18, 18, 0.452);
+}
+
+.card {
+  box-shadow: -5px 5px 10px grey;
+  cursor: pointer;
+}

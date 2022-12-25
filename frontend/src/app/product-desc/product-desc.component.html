@@ -1,0 +1,46 @@
+<div class="con" >
+  <div class="con-1">
+    
+  </div>
+  <div class="con-2">
+    <h3>
+      {{productdata.ProductName}}
+    </h3>
+
+    <h5>{{productdata.Brand}}</h5>
+    <br />
+    <h5>About this item</h5>
+
+    <p>
+      {{productdata.ProdDesc}}
+    </p>
+
+    <span>Price: ₹{{productdata.Price}}</span>
+    &nbsp;&nbsp;
+    <button type="submit" class="btns btn btn-primary btn-sm" (click)="addtocompare(productdata)">
+      Add to Compare
+    </button>
+    <br />
+    <hr />
+    
+    <form>
+      <div class="form-group">
+        <label class="input-group-text" for="inputGroupSelect01">Quantity</label>
+  <select class="form-select" id="inputGroupSelect01" name="inputGroupSelect01" #teams (change)="onSelected(teams.value)">
+    <option value="1" selected>1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+
+  </select>
+      </div>
+      <button type="submit" routerlink="/user/wishlist" class="btns btn btn-primary btn-sm" (click)="add(productdata.ProductId)">
+        WishList
+      </button>
+      <button type="submit" routerlink="/cart" class="btns btn btn-primary btn-sm" (click)="addtocart(productdata)">
+        Add To Cart
+      </button>
+    </form>
+    </div>
+  </div>

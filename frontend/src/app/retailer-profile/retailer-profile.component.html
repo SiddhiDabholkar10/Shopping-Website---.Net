@@ -1,0 +1,20 @@
+<div class="row" style="width: 100%; margin: 0">
+  <div class="sidebar col-lg-3">
+    <button class="btn btn-primary" (click)="details()" >My Details</button>
+    <button routerLink="my-products" class="btn btn-success" [routerLink]="['/retailer/my-products/',data.RetId]">My Products</button>
+    <button routerLink="/newpassRetailer" class="btn btn-warning">
+      Change Password
+    </button>
+     <button class="btn btn-danger" (click)="deleteret()">Delete Account</button>
+  </div>
+  <div class="col-lg-9">
+    <div class="content">
+      <h3 style="text-align: center">My Details</h3>
+      <p>Name: {{retailerdata.RetName}}</p>
+      <p>Email: {{retailerdata.RetEmail}}</p>
+      <p>Mob: {{retailerdata.RetMob}}</p>
+      <p>Location: {{retailerdata.RetLoc}}</p>
+<p>Revenue: {{revenue | currency:'INR':true}}</p>
+    </div>
+  </div>
+</div>
